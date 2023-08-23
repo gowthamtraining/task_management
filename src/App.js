@@ -6,8 +6,6 @@ import Edit from "./components/Edit"
 import { useEffect, useState } from 'react';
 import Navbar from './components/Header';
 import "./components/Data.css"
-import Login from './components/Login';
-import Protected from './components/Protected';
 function App() {
   const [task,SetTask] = useState(getItem())
   useEffect(()=>{
@@ -22,12 +20,6 @@ function App() {
       return []
     }
   }
-  useEffect(()=>{
-    const login= localStorage.getItem('login')
-    if(!login){
-      Navigate("/login")
-    }
-  },[])
   console.log(task)
   return(
     <Router>
@@ -36,7 +28,6 @@ function App() {
         <Route path='/add' element ={<Data setData = {SetTask} data ={task}></Data>}/>
         <Route path='/list' element={<List data = {task} setData ={SetTask}></List>}></Route>
         <Route path='/edit/:Id' element={<Edit data = {task}></Edit>}></Route>
-        <Route path='/login' element={<Login/>}/>
       </Routes>
     </Router>
   )

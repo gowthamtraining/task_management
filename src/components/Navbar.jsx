@@ -7,7 +7,6 @@ const Navbar = () => {
             <div className="button">
             <Link to ="/add"><button>add</button></Link>
             <Link to ="/list"><button>list</button></Link>
-            <Link to ="/login"><button>login</button></Link>
             </div>
     </div>
   )
